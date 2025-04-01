@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+我想写一个多种工具ALL in ONE的APP，整体的思路是，APP最外层分为3个TAB，分别为首页展示页，可以根据工具自定义展示或添加工具中的部分内容，第二页是工具集，第三页是个人信息和设置等，
+
+框架要求：
+
+1. 方便后续添加工具，并且在首页添加展示内容
+
+2. 方便维护，不同功能尽可能的解耦
+
+3. 方便向首页添加展示内容
+
+4. 界面美观
+
+5. 所有数据可以通过webdav保存和恢复
+
+6. 写好README和开发文档，能够为后续的开发提供支持
+
+- You can @ files here
+- You can use markdown but dont have to

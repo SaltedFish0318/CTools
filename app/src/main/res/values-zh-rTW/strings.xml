@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">CTools</string>
+    <string name="home">首頁</string>
+    <string name="tools">工具</string>
+    <string name="profile">我的</string>
+    <string name="settings">設置</string>
+    <string name="default_email">用戶@示例.com</string>
+    <string name="tool_check_in">打卡</string>
+    <string name="not_checked_in">今日未打卡</string>
+    <string name="checked_in">今日已打卡</string>
+    <string name="check_in_now">立即打卡</string>
+    <string name="check_in_description">記錄每日打卡，查看打卡歷史記錄</string>
+    <string name="check_in_drink_water">喝水</string>
+    <string name="check_in_toilet">上廁所</string>
+    <string name="check_in_exercise">運動</string>
+    <string name="check_in_drink_water_desc">保持水分攝入，每天8杯水</string>
+    <string name="check_in_toilet_desc">記錄如廁次數</string>
+    <string name="check_in_exercise_desc">記錄每日運動</string>
+    <string name="check_in_items">打卡項目</string>
+    <string name="check_in_detail">打卡詳情</string>
+    <string name="add_check_in_item">添加打卡項</string>
+    <string name="check_in_count">已打卡：%1$d/%2$d</string>
+    <string name="today_total">今日總計</string>
+</resources> 

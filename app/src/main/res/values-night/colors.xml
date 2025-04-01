@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 夜间模式主题颜色 - Material Design 3样式 -->
+    <color name="colorPrimary">#D0BCFF</color>
+    <color name="colorPrimaryDark">#381E72</color>
+    <color name="colorAccent">#9373FF</color>
+    
+    <!-- 其他辅助颜色 -->
+    <color name="colorSurface">#FF1F1F1F</color>
+    <color name="colorBackground">#FF121212</color>
+    <color name="colorError">#FFCF6679</color>
+    
+    <!-- 文本颜色 -->
+    <color name="textColorPrimary">#FFFFFFFF</color>
+    
+    <!-- 夜间模式下的颜色覆盖 -->
+    <color name="colorOnPrimary">#000000</color>
+    <color name="textColorSecondary">#B3FFFFFF</color>
+    <color name="textColorTertiary">#80FFFFFF</color>
+</resources> 
