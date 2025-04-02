@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    android:fitsSystemWindows="true"
+    android:fitsSystemWindows="false"
     tools:context=".tools.checkin.CheckInActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -15,7 +15,7 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:fitsSystemWindows="true"
+        android:fitsSystemWindows="false"
         app:titleTextColor="?attr/colorOnPrimary"
         app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:titleCentered="true"
@@ -63,4 +63,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout> 
+</androidx.constraintlayout.widget.ConstraintLayout>

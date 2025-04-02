@@ -15,6 +15,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.synzura.ctools.R
 import com.synzura.ctools.databinding.ActivityCheckInDetailBinding
+import com.synzura.ctools.utils.StatusBarUtils
 import java.text.SimpleDateFormat
 import java.util.*
 import android.widget.EditText
@@ -38,15 +39,8 @@ class CheckInDetailActivity : AppCompatActivity() {
         binding = ActivityCheckInDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         
-        // 使用更直接的方式设置状态栏颜色
-        val window = this.window
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-        window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimary)
-        
-        // 确保状态栏图标为白色（适用于深色背景）
-        val wic = WindowInsetsControllerCompat(window, window.decorView)
-        wic.isAppearanceLightStatusBars = false
+        // 启用沉浸式状态栏
+        StatusBarUtils.setImmersiveStatusBar(this, false)
         
         // 获取打卡项目ID
         val itemId = intent.getStringExtra(EXTRA_CHECK_IN_ID)
@@ -70,6 +64,12 @@ class CheckInDetailActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = checkInItem?.name ?: getString(R.string.check_in_detail)
+        
+        // 设置标题居中
+        (binding.toolbar as? com.google.android.material.appbar.MaterialToolbar)?.isTitleCentered = true
+        
+        // 为Toolbar添加状态栏高度的内边距
+        StatusBarUtils.addStatusBarPadding(binding.toolbar, this)
         
         binding.toolbar.setNavigationOnClickListener {
             finish()

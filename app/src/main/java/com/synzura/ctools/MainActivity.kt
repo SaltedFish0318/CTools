@@ -13,6 +13,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.synzura.ctools.databinding.ActivityMainBinding
+import com.synzura.ctools.utils.StatusBarUtils
 
 class MainActivity : AppCompatActivity() {
     
@@ -28,18 +29,8 @@ class MainActivity : AppCompatActivity() {
     }
     
     private fun setupStatusBar() {
-        // 设置状态栏和导航栏
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        
-        // 获取WindowInsetsController
-        val windowInsetsController = WindowInsetsControllerCompat(window, window.decorView)
-        
-        // 设置状态栏图标颜色（深色背景使用浅色图标）
-        windowInsetsController.isAppearanceLightStatusBars = false
-        
-        // 设置状态栏颜色
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimary)
+        // 使用工具类设置沉浸式状态栏
+        StatusBarUtils.setImmersiveStatusBar(this, isDarkTheme())
     }
     
     private fun isDarkTheme(): Boolean {

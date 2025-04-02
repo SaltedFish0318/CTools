@@ -28,6 +28,11 @@ class ToolsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
+        // 处理状态栏高度
+        binding.toolbar?.let { toolbar ->
+            com.synzura.ctools.utils.StatusBarUtils.addStatusBarPadding(toolbar, requireContext())
+        }
+        
         setupRecyclerView()
         loadTools()
     }
@@ -49,4 +54,4 @@ class ToolsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-} 
+}

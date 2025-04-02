@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import com.google.android.material.snackbar.Snackbar
 import com.synzura.ctools.R
 import com.synzura.ctools.databinding.ActivityCheckInBinding
+import com.synzura.ctools.utils.StatusBarUtils
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.util.*
@@ -36,15 +37,9 @@ class CheckInActivity : AppCompatActivity() {
         binding = ActivityCheckInBinding.inflate(layoutInflater)
         setContentView(binding.root)
         
-        // 使用更完整的方式设置状态栏颜色，避免受Fragment影响
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-        window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimary)
+        // 使用工具类设置沉浸式状态栏
+        StatusBarUtils.setImmersiveStatusBar(this, false)
         
-        // 设置状态栏图标为白色（深色背景）
-        val windowInsetsController = WindowInsetsControllerCompat(window, window.decorView)
-        windowInsetsController.isAppearanceLightStatusBars = false
-
         setupToolbar()
         setupRecyclerView()
         setupObservers()
@@ -65,6 +60,9 @@ class CheckInActivity : AppCompatActivity() {
         
         // 设置标题居中
         binding.toolbar.isTitleCentered = true
+        
+        // 为Toolbar添加状态栏高度的内边距
+        StatusBarUtils.addStatusBarPadding(binding.toolbar, this)
         
         binding.toolbar.setNavigationOnClickListener {
             finish()
